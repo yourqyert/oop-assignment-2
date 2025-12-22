@@ -4,10 +4,9 @@ import me.yourqyert.assignment.artworks.Painting;
 import me.yourqyert.assignment.artworks.Sculpture;
 import me.yourqyert.assignment.objects.Artist;
 import me.yourqyert.assignment.objects.Artwork;
+import me.yourqyert.assignment.objects.Gallery;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Main {
 
@@ -26,16 +25,23 @@ public class Main {
                 starryNight,
                 monaLisa,
                 thinker
-        ); //list of objects
+        );
 
-        List<Artwork> rodinWorks = works.stream()
-                .filter(work -> work.getArtist().equals(rodin)).toList(); //filtering
+        Gallery gallery = new Gallery("EXPO Gallery", works);
 
-        Comparator<Artwork> comparator = (a, b) -> a.getName().compareTo(b.getName());
-        List<Artwork> sortedList = works.stream().sorted(comparator).toList(); //sorting
+        System.out.println("Current artwork list: " + Arrays.toString(gallery.getArtworks().toArray()));
+        System.out.println("Sorted artwork list: " + Arrays.toString(gallery.getSortedArtworks().toArray()));
 
-        Optional<Artwork> artwork = works.stream()
-                .filter(work -> work.getArtist().equals(rodin)).findAny(); //searching
+        List<Artwork> artworkByAuthorList = new ArrayList<>(gallery.getArtworkList(vanGogh.getName()));
+        System.out.println(vanGogh.getName() + "'s artwork list: " + Arrays.toString(artworkByAuthorList.toArray()));
 
+        Artwork testArtwork =
+                gallery.getArtwork(vanGogh.getName(), "Mona Lisa").orElse(null);
+
+        if (testArtwork == null) {
+            System.out.println("Artwork not found (filter by name and author result)");
+        } else {
+            System.out.println("Artwork found (filter by name and author result)");
+        }
     }
 }
