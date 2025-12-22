@@ -1,10 +1,7 @@
 package me.yourqyert.assignment;
 
-import me.yourqyert.assignment.artworks.Painting;
-import me.yourqyert.assignment.artworks.Sculpture;
-import me.yourqyert.assignment.objects.Artist;
-import me.yourqyert.assignment.objects.Artwork;
-import me.yourqyert.assignment.objects.Gallery;
+import me.yourqyert.assignment.artworks.*;
+import me.yourqyert.assignment.objects.*;
 
 import java.util.*;
 

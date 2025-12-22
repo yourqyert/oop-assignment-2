@@ -18,7 +18,7 @@ public class Gallery {
 
     public Optional<Artwork> getArtwork(String author, String name) {
         return getArtworkList(author).stream()
-                .filter(a -> a.getName().equalsIgnoreCase(name)).findFirst(); //filtering
+                .filter(a -> a.getName().equalsIgnoreCase(name)).findFirst();
     }
 
     public List<Artwork> getSortedArtworks() {
@@ -27,9 +27,9 @@ public class Gallery {
                 .toList();
     }
 
-    public List<Artwork> getArtworkList(String author) { //searching
+    public List<Artwork> getArtworkList(String author) {
         return artworks.stream()
-                .filter(work -> work.getArtist().getName().equalsIgnoreCase(name)).toList();
+                .filter(work -> work.getArtist().getName().equalsIgnoreCase(author)).toList();
     }
 
     @Override
