@@ -32,6 +32,10 @@ public class Gallery {
                 .filter(work -> work.getArtist().getName().equalsIgnoreCase(author)).toList();
     }
 
+    public void showArtwork(Displayable displayable) {
+        displayable.displayInfo();
+    }
+
     @Override
     public String toString() {
         return "Gallery{name='" + name + "', artworks=" + Arrays.toString(artworks.toArray()) + "}";

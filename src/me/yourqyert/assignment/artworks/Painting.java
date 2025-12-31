@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import me.yourqyert.assignment.objects.Artist;
 import me.yourqyert.assignment.objects.Artwork;
+import me.yourqyert.assignment.objects.Displayable;
 
 @Getter
 @Setter
-public class Painting extends Artwork {
+public class Painting extends Artwork implements Displayable {
 
     private Technicue technique;
 
@@ -28,5 +29,10 @@ public class Painting extends Artwork {
     public enum Technicue {
         WATERCOLOR,
         ACRYLIC
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Painting: " + super.getName() + ", artist: " + getArtist().getName());
     }
 }

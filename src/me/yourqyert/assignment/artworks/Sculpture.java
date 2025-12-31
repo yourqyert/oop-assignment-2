@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import me.yourqyert.assignment.objects.Artist;
 import me.yourqyert.assignment.objects.Artwork;
+import me.yourqyert.assignment.objects.Displayable;
 
 @Getter
 @Setter
-public class Sculpture extends Artwork {
+public class Sculpture extends Artwork implements Displayable {
 
     private String material;
 
@@ -23,5 +24,10 @@ public class Sculpture extends Artwork {
                 ", artist=" + getArtist().getName() +
                 ", material='" + material + '\'' +
                 '}';
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Sculpture: " + super.getName() + ", material: " + material);
     }
 }
