@@ -13,10 +13,10 @@ public class Main {
         Artist daVinci = new Artist("Leonardo da Vinci");
         Artist rodin = new Artist("Auguste Rodin");
 
-        Artwork starryNight = new Painting(vanGogh, "Starry Night", Painting.Technicue.ACRYLIC);
-        Artwork monaLisa = new Painting(daVinci, "Mona Lisa", Painting.Technicue.WATERCOLOR);
+        Painting starryNight = new Painting(vanGogh, "Starry Night", Painting.Technicue.ACRYLIC);
+        Painting monaLisa = new Painting(daVinci, "Mona Lisa", Painting.Technicue.WATERCOLOR);
 
-        Artwork thinker = new Sculpture(rodin, "The Thinker", "Bronze");
+        Sculpture thinker = new Sculpture(rodin, "The Thinker", "Bronze");
 
         List<Artwork> works = List.of(
                 starryNight,
@@ -40,5 +40,7 @@ public class Main {
         } else {
             System.out.println("Artwork found (filter by name and author result)");
         }
+
+        gallery.showArtwork(monaLisa);
     }
 }
